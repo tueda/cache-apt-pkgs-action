@@ -18,7 +18,7 @@ inputs:
     description: 'Execute Debian package pre and post install script upon restore. See README.md caveats for more information.'
     required: false
     default: 'false'
-  if-empty-packages:
+  empty_packages_behavior:
     description: >
       Desired behavior when the provided package list is empty.
 
@@ -69,7 +69,7 @@ runs:
       env:
          VERSION: "${{ inputs.version }}"
          EXEC_INSTALL_SCRIPTS: "${{ inputs.execute_install_scripts }}"
-         IF_EMPTY_PACKAGES: "${{ inputs.if-empty-packages }}"
+         EMPTY_PACKAGES_BEHAVIOR: "${{ inputs.empty_packages_behavior }}"
          DEBUG: "${{ inputs.debug }}"
          PACKAGES: "${{ inputs.packages }}"
 
