@@ -101,7 +101,7 @@ runs:
          PACKAGES: "${{ inputs.packages }}"
 
     - id: upload-logs
-      if: env.CACHE_KEY && inputs.debug == 'true'
+      if: inputs.debug == 'true'
       uses: actions/upload-artifact@v4
       with:
         name: cache-apt-pkgs-logs_${{ env.CACHE_KEY }}
